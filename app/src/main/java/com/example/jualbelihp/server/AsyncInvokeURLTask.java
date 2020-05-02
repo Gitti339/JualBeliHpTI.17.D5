@@ -3,6 +3,9 @@ package com.example.jualbelihp.server;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -19,6 +22,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+@RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
 public class AsyncInvokeURLTask extends AsyncTask<Void, Void, String> {
     public String mNoteItWebUrl = "www.smartneasy.com";
     private ArrayList<NameValuePair> mParams;
@@ -27,7 +31,7 @@ public class AsyncInvokeURLTask extends AsyncTask<Void, Void, String> {
     public boolean showdialog =false;
     public String message ="Proses Data";
     //Harus diganti dengan IP Server yang digunakan
-    public String url_server ="http://192.168.43.59/pemrograman-mobile/";
+    public String url_server ="https://siakad-altie.000webhostapp.com/xphone/";
     public Context applicationContext;
     public static interface OnPostExecuteListener{
         void onPostExecute(String result);
